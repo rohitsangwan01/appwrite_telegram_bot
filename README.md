@@ -1,31 +1,27 @@
-# Telegram bot
+# Appwrite Telegram bot
 
-Appwrite functions to run telegram bot
-
-
-## 🤖 Documentation
-
-1. Initialize appwrite function `telegram_bot` or `telegram_bot_dart`, check [docs](https://appwrite.io/docs/functions)
+Appwrite functions to run telegram bot, in dart and javascript ( more languages support comming soon )
 
 
-2. Run `appwrite deploy function` to deploy function to appwrite
+## Documentation
+
+-  Initialize appwrite function `telegram_bot` or `telegram_bot_dart`, check [docs](https://appwrite.io/docs/functions)
 
 
-3. Get your Telegram token from [BotFather](https://t.me/BotFather) and add `BOT_TOKEN` variable in `functions>telegram_bot>settings>Update Variables`
+-  Run `appwrite deploy function` to deploy function to appwrite
 
 
-4. Setup a webhook proxy which will execute this function from telegram request, checkout [this](https://github.com/rohitsangwan01/appwrite_webhook_deta) repo to setup a free webhook proxy using [Deta](https://deta.space/manual/introduction) or [this](https://github.com/Meldiron/railway-webhook-proxy) repo to setup using [Railway](https://railway.app/)
+-  Get your Telegram token from [BotFather](https://t.me/BotFather) and add `BOT_TOKEN` env variable in function settings
 
 
-5. Then use that proxy webhook url and bot token to link them to telegram, In order to do that, run this url (in your browser, for example): `https://api.telegram.org/bot<BOT_TOKEN>/setWebhook?url=<WEBHOOK_PROXY_URL>`
+-  Setup a webhook proxy which will execute this function from telegram request, checkout [this](https://github.com/rohitsangwan01/appwrite_webhook_deta) repo to setup a free webhook proxy using [Deta](https://deta.space/manual/introduction) or [this](https://github.com/Meldiron/railway-webhook-proxy) repo to setup using [Railway](https://railway.app/)
 
 
-6. That's it, go ahead and chat with your bot
+-  Then use that proxy webhook url and bot token to link them to telegram, In order to do that, run this url (in your browser, for example): `https://api.telegram.org/bot<BOT_TOKEN>/setWebhook?url=<WEBHOOK_PROXY_URL>`
 
 
-## 📝 Environment Variables
+-  That's it, go ahead and chat with your bot
 
-- **BOT_TOKEN** - Telegram bot token
 
 ## Deploy Using CLI
 
@@ -37,5 +33,3 @@ Make sure you are in the same folder as your `appwrite.json` file and run `appwr
 ## Note 
 
 Currently there are two functions for building telegram chatBot, using Javascript and Dart
-
-And two options to create a webhook proxy, using Deta or Railway
