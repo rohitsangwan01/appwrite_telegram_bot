@@ -14,10 +14,10 @@ Appwrite functions to run telegram bot, in dart and javascript ( more languages 
 -  Get your Telegram token from [BotFather](https://t.me/BotFather) and add `BOT_TOKEN` env variable in function settings
 
 
--  Setup a webhook proxy which will execute this function from telegram request, checkout [this](https://github.com/rohitsangwan01/appwrite_webhook_deta) repo to setup a free webhook proxy using [Deta](https://deta.space/manual/introduction) or [this](https://github.com/Meldiron/railway-webhook-proxy) repo to setup using [Railway](https://railway.app/)
+-  Setup a webhook proxy to execute these functions, using [appwrite_webhook_deta](https://github.com/rohitsangwan01/appwrite_webhook_deta) or [railway-webhook-proxy](https://github.com/Meldiron/railway-webhook-proxy)
 
 
--  Then use that proxy webhook url and bot token to link them to telegram, In order to do that, run this url (in your browser, for example): `https://api.telegram.org/bot<BOT_TOKEN>/setWebhook?url=<WEBHOOK_PROXY_URL>`
+-  Run this url in your browser for setting telegram webhook, `https://api.telegram.org/bot<BOT_TOKEN>/setWebhook?url=<WEBHOOK_PROXY_URL>` 
 
 
 -  That's it, go ahead and chat with your bot
