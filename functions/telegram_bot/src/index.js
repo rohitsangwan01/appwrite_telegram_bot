@@ -1,46 +1,45 @@
-const sdk = require("node-appwrite");
+const { Bot, webhookCallback } = require("grammy");
 
-/*
-  'req' variable has:
-    'headers' - object with request headers
-    'payload' - request body data as a string
-    'variables' - object with function variables
+const bot = new Bot(process.env.BOT_TOKEN);
 
-  'res' variable has:
-    'send(text, status)' - function to return text response. Status code defaults to 200
-    'json(obj, status)' - function to return JSON response. Status code defaults to 200
+bot.command("start", async (ctx) => {
+  const user = ctx.from;
+  if (!user) return;
+  await ctx.reply(
+    `Welcome ${user.first_name} ${user.last_name} !` +
+      "\nThis is a demo bot for Appwrite's Telegram integration."
+  );
+});
 
-  If an error is thrown, a response with code 500 will be returned.
-*/
+bot.on("message:text", (ctx) => {
+  const message = ctx.message.text;
+  ctx.reply("Hello from Appwrite!");
+});
 
-module.exports = async function (req, res) {
-  const client = new sdk.Client();
+// Grammy Webhook Adapter for appwrite
+const appwriteAdapter = (body, headers, res) => ({
+  update: body,
+  header: headers.SECRET_HEADER,
+  end: () => res.send("Success", 200),
+  respond: (json) => {
+    res.json(json);
+  },
+  unauthorized: () => {
+    res.send("WRONG_TOKEN_ERROR", 401);
+  },
+});
 
-  // You can remove services you don't use
-  const account = new sdk.Account(client);
-  const avatars = new sdk.Avatars(client);
-  const database = new sdk.Databases(client);
-  const functions = new sdk.Functions(client);
-  const health = new sdk.Health(client);
-  const locale = new sdk.Locale(client);
-  const storage = new sdk.Storage(client);
-  const teams = new sdk.Teams(client);
-  const users = new sdk.Users(client);
+const handleUpdate = webhookCallback(bot, appwriteAdapter);
 
-  if (
-    !req.variables['APPWRITE_FUNCTION_ENDPOINT'] ||
-    !req.variables['APPWRITE_FUNCTION_API_KEY']
-  ) {
-    console.warn("Environment variables are not set. Function cannot use Appwrite SDK.");
-  } else {
-    client
-      .setEndpoint(req.variables['APPWRITE_FUNCTION_ENDPOINT'])
-      .setProject(req.variables['APPWRITE_FUNCTION_PROJECT_ID'])
-      .setKey(req.variables['APPWRITE_FUNCTION_API_KEY'])
-      .setSelfSigned(true);
+module.exports = async (req, res) => {
+  try {
+    const obj = JSON.parse(req.payload);
+    const response = await handleUpdate(obj.body, obj.headers, res);
+    res.json({ data: response });
+  } catch (err) {
+    console.error(err);
+    res.json({
+      err: `${err}`,
+    });
   }
-
-  res.json({
-    areDevelopersAwesome: true,
-  });
 };
