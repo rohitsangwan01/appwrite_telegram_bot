@@ -1,0 +1,18 @@
+name: telegram_bot_dart
+description: A telegram bot written in dart using appwrite
+version: 1.0.0
+publish_to: none
+
+environment:
+  sdk: ">=2.17.7 <3.0.0"
+
+dependencies: 
+  dart_appwrite: ^7.1.0
+  dart_telegram_bot:
+    git:
+      url: https://github.com/rohitsangwan01/dart-telegram-bot.git
+      ref: handle_webhook 
+
+dev_dependencies:
+  lints: ^2.0.0
+  test: ^1.21.0
