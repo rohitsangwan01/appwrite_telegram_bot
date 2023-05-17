@@ -8,9 +8,6 @@ Appwrite functions to run telegram bot, in dart and javascript ( more languages 
 -  Initialize appwrite function `telegram_bot` or `telegram_bot_dart`, check [docs](https://appwrite.io/docs/functions)
 
 
--  Run `appwrite deploy function` to deploy function to appwrite
-
-
 -  Get your Telegram token from [BotFather](https://t.me/BotFather) and add `BOT_TOKEN` env variable in function settings
 
 
