@@ -1,6 +1,6 @@
 # Appwrite Telegram bot
 
-Appwrite functions to run telegram bot, in dart, javascript and python ( more languages support coming soon )
+Appwrite functions to run telegram bot in dart, javascript and python ( more languages support coming soon )
 
 
 ## Documentation
@@ -20,13 +20,24 @@ Appwrite functions to run telegram bot, in dart, javascript and python ( more la
 -  That's it, go ahead and chat with your bot
 
 
+## Libraries used for bot :
+
+-  javascript : [grammy](https://github.com/grammyjs/grammY)
+
+-  Dart: [dart_telegram_bot](https://github.com/KaikyuLotus/dart-telegram-bot)
+
+-  Python: [pyTelegramBotAPI](https://github.com/eternnoir/pyTelegramBotAPI)
+
 ## Deploy Using CLI
 
-Make sure you have [Appwrite CLI](https://appwrite.io/docs/command-line#installation) installed, and you have successfully logged into your Appwrite server. To make sure Appwrite CLI is ready, you can use the command `appwrite client --debug` and it should respond with green text `✓ Success`.
+Make sure you have [Appwrite CLI](https://appwrite.io/docs/command-line#installation) installed, and you have successfully logged into your Appwrite server
 
-Make sure you are in the same folder as your `appwrite.json` file and run `appwrite deploy function` to deploy your function. You will be prompted to select which functions you want to deploy.
+Make sure you are in the same folder as your `appwrite.json` file and run `appwrite deploy function` to deploy your function
 
 
 ## Note 
 
-Currently this repo contains few examples of building telegram bots in multiple languages like : dart, javascript, python
+This repo contains examples of building telegram bots in multiple languages like : dart, javascript, python
+
+Using webhook approach to get telegram messages updates
+
