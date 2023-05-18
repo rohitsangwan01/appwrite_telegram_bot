@@ -1,11 +1,11 @@
 # Appwrite Telegram bot
 
-Appwrite functions to run telegram bot, in dart and javascript ( more languages support comming soon )
+Appwrite functions to run telegram bot, in dart, javascript and python ( more languages support coming soon )
 
 
 ## Documentation
 
--  Initialize appwrite function `telegram_bot` or `telegram_bot_dart`, check [docs](https://appwrite.io/docs/functions)
+-  Initialize appwrite functions, check [docs](https://appwrite.io/docs/functions)
 
 
 -  Get your Telegram token from [BotFather](https://t.me/BotFather) and add `BOT_TOKEN` env variable in function settings
@@ -29,4 +29,4 @@ Make sure you are in the same folder as your `appwrite.json` file and run `appwr
 
 ## Note 
 
-Currently there are two functions for building telegram chatBot, using Javascript and Dart
+Currently this repo contains few examples of building telegram bots in multiple languages like : dart, javascript, python
