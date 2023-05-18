@@ -1,7 +1,6 @@
 # Appwrite Telegram bot
 
-Appwrite functions to run telegram bot in dart, javascript and python ( more languages support coming soon )
-
+Appwrite functions to run telegram bot in multiple languages
 
 ## Documentation
 
@@ -28,6 +27,8 @@ Appwrite functions to run telegram bot in dart, javascript and python ( more lan
 
 -  Python: [pyTelegramBotAPI](https://github.com/eternnoir/pyTelegramBotAPI)
 
+-  PHP: [TelegramBotPHP](https://github.com/Eleirbag89/TelegramBotPHP)
+
 ## Deploy Using CLI
 
 Make sure you have [Appwrite CLI](https://appwrite.io/docs/command-line#installation) installed, and you have successfully logged into your Appwrite server
@@ -37,7 +38,7 @@ Make sure you are in the same folder as your `appwrite.json` file and run `appwr
 
 ## Note 
 
-This repo contains examples of building telegram bots in multiple languages like : dart, javascript, python
+This repo contains examples of building telegram bots in multiple languages like : dart, javascript, python, PHP
 
 Using webhook approach to get telegram messages updates
 
